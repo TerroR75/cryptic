@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;700&display=swap');
+@import url('./styles/Navbar.css');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: 'Roboto Mono', monospace;
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #050810;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+
+  scroll-behavior: smooth;
+}
+
+/* Apply Classes TW */
+@layer components {
+  .btn-primary {
+    @apply py-2 px-4 bg-blue-500 text-black rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75;
+  }
+  .btn-primary-outline {
+    @apply py-2 px-4 bg-inherit outline outline-2 outline-gray-600 hover:outline-none text-white rounded-lg shadow-md hover:bg-blue-700 hover:text-black focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75;
+  }
+  .bg-gradient-primary {
+    @apply bg-gradient-to-b from-purple-300 to-indigo-600;
+  }
+  .bg-gradient-primary-hover {
+    @apply hover:bg-gradient-to-b from-purple-300 to-indigo-600;
+  }
+}
+
+.bg-gradient-text-primary {
+  z-index: -5;
+  position: relative;
+  background: #d8b4fe;
+  background: linear-gradient(to bottom left, #d8b4fe 0%, #4f46e5 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.bg-gradient-text-primary::after {
+  content: '';
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  position: absolute;
+  filter: blur(32px);
+  background: #d8b4fe;
+  background: linear-gradient(to bottom left, #d8b4fe3b 0%, #4e46e536 100%);
+}
